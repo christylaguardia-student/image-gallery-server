@@ -8,8 +8,8 @@ const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/emoji';
 connect(dbUri);
 
 const server = http.createServer(app);
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 server.listen(port, () => {
-  console.log('server is running on port', server.address().port);
+  console.log('Server is running on port', server.address().port);
 });
