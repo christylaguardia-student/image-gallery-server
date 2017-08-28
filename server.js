@@ -2,7 +2,7 @@
 
 const http = require('http');
 const app = require('./lib/app');
-const connect = require('./lib/connect');s
+const connect = require('./lib/connect');
 
 const dbUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/emoji';
 connect(dbUri);
