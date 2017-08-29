@@ -47,8 +47,9 @@ describe('Image api', () => {
       .then(saved => newImages = saved)
       .then(() => request.get('/api/images'))
       .then(res => {
-        const saved = res.body.sort((a,b) => a._id > b._id ? 1 : -1);
-        assert.deepEqual(saved, newImages);
+        const found = res.body.sort((a,b) => a._id > b._id ? 1 : -1);
+        // console.log('found', found);
+        assert.deepEqual(found, newImages);
       });
 
   });
